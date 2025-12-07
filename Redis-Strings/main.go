@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	fmt.Println("Go + Redis")
+	fmt.Println("Go + Redis + Strings")
 
 	ctx := context.Background()
 
@@ -16,7 +16,11 @@ func main() {
 	rdb := redis.NewClient(&redis.Options{
 		Addr:     "localhost:6379", // Default port
 		Password: "",               // No password set
+		DB:       0,
 	})
+
+	// Flush FIRST so DB starts empty every run
+	rdb.FlushDB(ctx)
 
 	// { Set } method example
 	resStr, _ := rdb.Set(ctx, "key1", "value1", 0).Result()
