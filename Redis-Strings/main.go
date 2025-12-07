@@ -16,7 +16,7 @@ func main() {
 	rdb := redis.NewClient(&redis.Options{
 		Addr:     "localhost:6379", // Default port
 		Password: "",               // No password set
-		DB:       0,
+		DB:       4,
 	})
 
 	// Flush FIRST so DB starts empty every run

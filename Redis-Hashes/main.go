@@ -8,11 +8,13 @@ import (
 )
 
 func main() {
+	fmt.Println("Go + Redis + Hashes")
+
 	ctx := context.Background()
 
 	// Connect to Redis
 	rdb := redis.NewClient(&redis.Options{
-		DB: 3,
+		DB: 0,
 	})
 
 	// Flush FIRST so DB starts empty every run

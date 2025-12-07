@@ -8,6 +8,8 @@ import (
 )
 
 func main() {
+	fmt.Println("Go + Redis + Sets")
+
 	ctx := context.Background()
 
 	// Connect to Redis
